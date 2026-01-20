@@ -1,0 +1,33 @@
+DAX MEASURES :
+
+1. AVG FREIGHT COST = AVERAGE('gold vw_orders_analysis'[Freight Cost])
+
+2. AOV = DIVIDE(SUM('gold vw_sales_analysis'[Sales Amount]),SUM('gold vw_sales_analysis'[Quantity])) 
+
+3. DISCOUNT % = AVERAGE('gold vw_sales_analysis'[Discount Percent])
+
+4. min_Quantity = MINX(ALLSELECTED('gold vw_sales_analysis'[Product Name]),[Sum_Quantity])
+
+5. Sum_Quantity = SUM('gold vw_sales_analysis'[Quantity])
+
+6. TOTAL CUSTOMERS = COUNTA('gold vw_sales_analysis'[Customer Name])
+
+7. TOTAL ORDERS = COUNTA('gold vw_orders_analysis'[Order ID])
+
+8. TOTAL SALES = SUM('gold vw_sales_analysis'[Sales Amount]) 
+
+9. BAR COLOR GRADIENT = 
+	VAR min_quantity = MINX(ALLSELECTED('gold vw_sales_analysis'[Product Name]),[Sum_Quantity])
+	VAR max_quantity = MAXX(ALLSELECTED('gold vw_sales_analysis'[Product Name]),[Sum_Quantity])
+	VAR currentvalue = [Sum_Quantity]
+
+	VAR Ratio = DIVIDE(currentvalue - min_quantity, max_quantity - min_quantity )
+
+	RETURN
+    		SWITCH(
+        	TRUE(),
+        	Ratio <= 0.25, "#ffd1b3",
+        	Ratio <= 0.5, "#ffb380",
+        	Ratio <= 0.75, "#ff944d",
+        	"#ff6600"
+   		)
