@@ -10,7 +10,7 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 ### Building Data Warehouse (Data Engineering)
 
 ### Objectives
-Develop a data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision making.
+Develop a data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision making using python as orchestrator to perform reloads.
 
 ### Specifications
 - **Data Sources**: Import data provided as txt.
