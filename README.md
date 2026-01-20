@@ -13,7 +13,7 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 Develop a data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision making.
 
 ### Specifications
-- **Data Sources**: Import data provided as csv.
+- **Data Sources**: Import data provided as txt.
 - **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
 - **Integration**: combining source tables and creating user friendly data model designed for analytical queries.
 - **Scope**: Focus on latest data using SCD 2.
